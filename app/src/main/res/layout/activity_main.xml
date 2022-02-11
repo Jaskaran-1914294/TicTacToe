@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+
+    <TextView
+        android:id="@+id/winnerPrint"
+        android:layout_marginTop="20dp"
+        android:textStyle="bold"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=""
+        android:textSize="22sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/reload"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="resetGame"
+        android:visibility="invisible"
+        android:layout_marginTop="20dp"
+        android:backgroundTint="@color/black"
+        android:text="Play Again"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/winnerPrint" />
+
+    <GridLayout
+        android:id="@+id/layout"
+        android:columnCount="3"
+        android:rowCount="3"
+        android:layout_width="360dp"
+        android:layout_height="360dp"
+        android:layout_marginTop="50dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintStart_toStartOf="parent"
+        android:background="@drawable/board"
+        app:layout_constraintTop_toBottomOf="@+id/reload">
+
+        <ImageView
+            android:id="@+id/a"
+            android:layout_margin="10dp"
+            android:onClick="fillIn"
+            android:layout_width="100dp"
+            android:tag="0"
+            android:layout_height="100dp"/>
+        <ImageView
+            android:id="@+id/b"
+            android:layout_marginLeft="12dp"
+            android:tag="1"
+            android:layout_margin="10dp"
+            android:layout_width="100dp"
+            android:onClick="fillIn"
+            android:layout_height="100dp"/>
+        <ImageView
+            android:id="@+id/c"
+            android:tag="2"
+            android:layout_margin="10dp"
+            android:onClick="fillIn"
+            android:layout_width="100dp"
+            android:layout_height="100dp"/>
+
+
+        <ImageView
+            android:id="@+id/d"
+            android:layout_margin="10dp"
+            android:onClick="fillIn"
+            android:tag="3"
+            android:layout_width="100dp"
+            android:layout_height="100dp"/>
+        <ImageView
+            android:id="@+id/e"
+            android:layout_margin="10dp"
+            android:tag="4"
+            android:layout_marginLeft="12dp"
+            android:onClick="fillIn"
+            android:layout_width="100dp"
+            android:layout_height="100dp"/>
+        <ImageView
+            android:id="@+id/f"
+            android:tag="5"
+            android:layout_margin="10dp"
+            android:onClick="fillIn"
+            android:layout_width="100dp"
+            android:layout_height="100dp" />
+
+
+        <ImageView
+            android:id="@+id/g"
+            android:layout_marginTop="12dp"
+            android:tag="6"
+            android:onClick="fillIn"
+            android:layout_margin="10dp"
+            android:layout_width="100dp"
+            android:layout_height="100dp" />
+        <ImageView
+            android:id="@+id/h"
+            android:layout_marginTop="12dp"
+            android:tag="7"
+            android:onClick="fillIn"
+            android:layout_margin="10dp"
+            android:layout_marginLeft="12dp"
+            android:layout_width="100dp"
+            android:layout_height="100dp"/>
+        <ImageView
+            android:id="@+id/i"
+            android:layout_marginTop="12dp"
+            android:tag="8"
+            android:onClick="fillIn"
+            android:layout_margin="10dp"
+            android:layout_width="100dp"
+            android:layout_height="100dp"/>
+    </GridLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
