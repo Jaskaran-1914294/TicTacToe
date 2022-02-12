@@ -123,6 +123,13 @@ public class MainActivity extends AppCompatActivity {
             }
         }
     }
+    public void matchTie(){
+        Button btn=(Button)findViewById(R.id.reload);
+        TextView txt=(TextView)findViewById(R.id.winnerPrint);
+        txt.setText("Game is Tied");
+        txt.setVisibility(View.VISIBLE);
+        btn.setVisibility(View.VISIBLE);
+    }
     public void fillIn(View view) {
 //        Log.i("tag","clicked");
         //filling with images
@@ -146,11 +153,20 @@ public class MainActivity extends AppCompatActivity {
                 checkWinner(1);
             }
             current.setTranslationY(-1500);
-
             current.animate().translationYBy(1500).alpha(1).setDuration(300);
+            boolean canPlay=false;
+            for(int i=0;i<9;i++){
+                if(state[i]==2){
+                    canPlay=true;
+                }
+            }
+            if(!canPlay){
+                matchTie();
+            }
         }
         else{
             Toast.makeText(this,"Please Click on empty Spaces Only",Toast.LENGTH_SHORT).show();
         }
+
     }
 }
